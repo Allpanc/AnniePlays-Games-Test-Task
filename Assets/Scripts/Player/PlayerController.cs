@@ -8,7 +8,8 @@ namespace AnniePlaysGamesTestTask.Player
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(PlayerInput))]
     [RequireComponent(typeof(PlayerStats))]
-    public class PlayerController : MonoBehaviour
+    [RequireComponent(typeof(ShootingSystem))]
+    public class PlayerController : MonoBehaviour,IKillable
     {
         [SerializeField] StateMachine _stateMachine;
         [SerializeField] PlayerInput _playerInput;
@@ -32,9 +33,14 @@ namespace AnniePlaysGamesTestTask.Player
             Debug.Log("Attack");
         }
 
-        public void TakeDamage()
+        public void TakeDamage(int damage)
         {
+            Stats.Health -= damage;
+        }
 
+        public void Die()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

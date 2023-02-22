@@ -28,6 +28,7 @@ namespace AnniePlaysGamesTestTask.Player.States
             {
                 case State.Attack:
                     _currentState = _attackingState;
+                    
                     break;
                 case State.Run:
                     _currentState = _runningState;

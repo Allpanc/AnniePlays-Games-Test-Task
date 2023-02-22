@@ -17,6 +17,7 @@ namespace AnniePlaysGamesTestTask.Player.States
         {
             base.Enter();
             _animator.SetBool("isRunning", true);
+            _player.GetComponent<ShootingSystem>().StopShooting();
         }
 
         public override void Tick()
