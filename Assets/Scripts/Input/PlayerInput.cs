@@ -4,18 +4,24 @@ namespace AnniePlaysGamesTestTask.Input
 {
     public class PlayerInput : MonoBehaviour
     {
-        public Input.Joystick _joystick;
-        public Vector3 _direction { get; private set; }
+        public Joystick Joystick;
+        public Vector3 Direction { get; private set; }
+
+        private void Awake()
+        {
+            Joystick = FindObjectOfType<Joystick>();
+        }
 
         void Update()
         {
-            _direction = GetMovementDirection();
+            
+            Direction = GetMovementDirection();
         }
 
         private Vector3 GetMovementDirection()
         {
-            Vector3 direction = Vector3.forward * _joystick.Vertical + Vector3.right * _joystick.Horizontal;
-            Debug.Log("Direction " + direction);
+            Vector3 direction = Vector3.forward * Joystick.Vertical + Vector3.right * Joystick.Horizontal;
+            //Debug.Log("Direction " + direction);
             return direction;
         }
     }
