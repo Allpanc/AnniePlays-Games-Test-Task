@@ -32,7 +32,6 @@ namespace AnniePlaysGamesTestTask.Core.Shooting
             Physics.IgnoreCollision(bullet.GetComponent<Collider>(), bullet.Owner.GetComponent<Collider>());
 
             Vector3 shootingDirection = GetShootingDirection();
-            Debug.DrawRay(_startBulletLocation.position, shootingDirection,Color.red,3f);
      
             bullet.transform.position = _startBulletLocation.position;
             bullet.GetComponent<Rigidbody>().freezeRotation = false;
@@ -50,7 +49,6 @@ namespace AnniePlaysGamesTestTask.Core.Shooting
         {
             if (_shootingRoutine == null)
                 _shootingRoutine = StartCoroutine(Shoot());
-            //Debug.LogWarning("Start shoting");
         }
 
         public void StopShooting()
@@ -59,10 +57,7 @@ namespace AnniePlaysGamesTestTask.Core.Shooting
             {
                 StopCoroutine(_shootingRoutine);
                 _shootingRoutine = null;
-                //Debug.LogWarning("Stop shooting");
             }
-            else
-                Debug.LogWarning("Null routine " + gameObject.name);
         }
 
         protected IEnumerator Shoot()

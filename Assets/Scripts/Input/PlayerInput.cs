@@ -21,7 +21,6 @@ namespace AnniePlaysGamesTestTask.Input
         private Vector3 GetMovementDirection()
         {
             Vector3 direction = Vector3.forward * Joystick.Vertical + Vector3.right * Joystick.Horizontal;
-            //Debug.Log("Direction " + direction);
             return direction;
         }
     }

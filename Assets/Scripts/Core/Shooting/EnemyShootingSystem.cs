@@ -11,7 +11,6 @@ namespace AnniePlaysGamesTestTask.Core.Shooting
         {
             base.Start();
             _player = FindObjectOfType<PlayerController>();
-            //Debug.Log(_pool.gameObject.name + " " + _player.name);
         }
 
         protected override Vector3 GetShootingDirection()

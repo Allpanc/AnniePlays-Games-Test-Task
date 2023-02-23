@@ -36,7 +36,6 @@ namespace AnniePlaysGamesTestTask.Pool
             if (_pooledObjects.Contains(objectToRelease))
             {
                 objectToRelease.gameObject.SetActive(false);
-                //Debug.Log("Release");
             }
         }
     }

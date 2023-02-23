@@ -47,7 +47,6 @@ namespace AnniePlaysGamesTestTask.Core.Shooting
         {
             yield return null;
             _enemies = FindObjectsOfType<EnemyController>();
-            Debug.Log("Enemies left " + _enemies.Length);
             if (_enemies.Length == 0)
                 OnNoEnemiesLeft.Invoke();
         }
