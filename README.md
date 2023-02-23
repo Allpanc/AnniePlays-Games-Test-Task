@@ -2,4 +2,4 @@
  
 Тестовое задание для AnniePlays Games
 
-Ссылка на видео с геймлпеем: https://youtu.be/gYtzKENV25o
+Ссылка на видео с геймплеем: https://youtu.be/gYtzKENV25o
