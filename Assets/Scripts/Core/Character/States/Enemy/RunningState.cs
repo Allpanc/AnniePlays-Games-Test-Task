@@ -9,14 +9,12 @@ namespace AnniePlaysGamesTestTask.Core.Character.States.Enemy
         public override void Enter()
         {
             base.Enter();
-            //_animator.SetBool("isRunning", true);
+            if (_enemy is Soldier)
+                _animator.SetBool("isRunning", true);
             EnemyStats stats = (EnemyStats)_enemy.Stats;
             PlayerController player = GameObject.FindObjectOfType<PlayerController>();
             Vector3 targetPosition = (player.transform.position - _agent.transform.position).normalized * stats.MovementRadius;
             targetPosition.y = _enemy.transform.position.y;
-            //Debug.Log("Target " + targetPosition + " player " + player.transform.position);
-            //GameObject marker = GameObject.Find("Sphere");
-            //marker.transform.position = targetPosition;
             _agent.SetDestination(targetPosition);
             _shootingSystem.StopShooting();
         }

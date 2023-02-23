@@ -13,7 +13,6 @@ namespace AnniePlaysGamesTestTask.Core
         {
             if (other.gameObject.GetComponent<PlayerController>() != null)
             {
-                Debug.Log("Finish");
                 Time.timeScale = 0;
                 OnReached.Invoke();
             }

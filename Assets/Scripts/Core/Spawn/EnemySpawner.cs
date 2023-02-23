@@ -29,8 +29,7 @@ namespace AnniePlaysGamesTestTask.Core.Spawn
                 Vector3 spawnPosition = PickSpawnPosition();
                 spawnPosition.y = spawnHeight;
 
-                EnemyController spawnedEnemy = Instantiate(enemy, spawnPosition, Quaternion.LookRotation(Vector3.back));
-                //Debug.Log(spawnPosition);           
+                EnemyController spawnedEnemy = Instantiate(enemy, spawnPosition, Quaternion.LookRotation(Vector3.back));       
             }
         }
 
@@ -42,11 +41,8 @@ namespace AnniePlaysGamesTestTask.Core.Spawn
 
             if (Physics.OverlapSphere(spawnPosition, 1).Length != 0)
             {
-                //Debug.Log("Pick spawn position again");
                 PickSpawnPosition();
             }
-
-            //Debug.Log("Spawn position picked");
             return spawnPosition;
         }
     }

@@ -34,7 +34,7 @@ namespace AnniePlaysGamesTestTask.Core.Shooting
                 return;
 
             StartCoroutine(ReturnToPoolAfterCollision());
-            Debug.Log("Bullet collided with " + collision.gameObject.name);
+
             _rb.useGravity = true;
             _rb.velocity = Vector3.zero;
             explosionEffect.SetActive(true);
@@ -54,7 +54,6 @@ namespace AnniePlaysGamesTestTask.Core.Shooting
         {
             yield return new WaitForSeconds(3f);
             IsUsed = false;
-            //Debug.Log("Bullet returned to pool after timeout");
             Pool.Release(this);
         }
     }

@@ -1,3 +1,4 @@
+using AnniePlaysGamesTestTask.Core.Character.Enemy;
 using UnityEngine;
 
 namespace AnniePlaysGamesTestTask.Core.Character.States.Enemy
@@ -7,7 +8,8 @@ namespace AnniePlaysGamesTestTask.Core.Character.States.Enemy
         public override void Enter()
         {
             base.Enter();
-            //_animator.SetBool("isRunning", false);
+            if (_enemy is Soldier)
+                _animator.SetBool("isRunning", false);
             _shootingSystem.StartShooting();
         }
 

@@ -46,7 +46,6 @@ namespace AnniePlaysGamesTestTask.Core.Character.Enemy
 
         private IEnumerator Activate()
         {
-            Debug.Log("Activate");
             EnemyStats enemyStats = (EnemyStats)Stats;
             while (true)
             {

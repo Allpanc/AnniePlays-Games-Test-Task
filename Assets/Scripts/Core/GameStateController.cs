@@ -21,6 +21,7 @@ namespace AnniePlaysGamesTestTask.Core
 
         void Start()
         {
+            Time.timeScale = 1;
             _menuSwitcher = FindObjectOfType<MenuSwitcher>();
             _finish = FindObjectOfType<Finish>();
             _finish.OnReached.AddListener(Win);
